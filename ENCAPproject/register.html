@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ENCAP</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style3.css">
+  </head>
+  <body>
+        <div id="cursor"></div>
+<div id="cursor-ring"></div>
+    <nav id="mainNav">
+        <div class="nav-bar">
+        <div class="logo">
+          <a href="index.html" style="text-decoration: none;">
+          <div class="logo-box">E</div>
+          </a>
+          <a href="index.html" style="text-decoration: none;">
+           <div class="logo-name">ENCAP</div>
+           </a>
+        </div>
+ <ul class="nav-links">
+        <a href="analyze.html">ANALYZE</a>
+        <a href="dashboard.html">DASHBOARD</a>
+        <a href="history.html">HISTORY</a>
+        <a href="login.html">LOGIN</a>
+        </ul>
+            
+             <a href="register.html"><button class="nav-actionButton">Get Started</button></a>
+        </div>
+    </nav>
+      <main class="main-content">
+        <div class="auth-layout">
+          <form id="registerForm" class="auth-card" novalidate>
+            <h1 class="auth-title">Create your ENCAP account</h1>
+            <p class="auth-subtitle">
+              Register to save analysis history, configure organization‑specific settings, and access
+              dashboards. This form is built to be easily connected to your authentication backend.
+            </p>
+
+            <div class="form-group">
+              <label for="registerName" class="form-label">
+                <span>Name</span>
+              </label>
+              <input
+                id="registerName"
+                name="name"
+                class="input"
+                type="text"
+                placeholder="Full name"
+                autocomplete="name"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="registerEmail" class="form-label">
+                <span>Email</span>
+              </label>
+              <input
+                id="registerEmail"
+                name="email"
+                class="input"
+                type="email"
+                placeholder="you@example.org"
+                autocomplete="email"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="registerPassword" class="form-label">
+                <span>Password</span>
+                <span class="helper">At least 8 characters</span>
+              </label>
+              <input
+                id="registerPassword"
+                name="password"
+                class="input"
+                type="password"
+                placeholder="Create a password"
+                autocomplete="new-password"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="registerConfirmPassword" class="form-label">
+                <span>Confirm Password</span>
+              </label>
+              <input
+                id="registerConfirmPassword"
+                name="confirmPassword"
+                class="input"
+                type="password"
+                placeholder="Re-enter your password"
+                autocomplete="new-password"
+              />
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="btn">Register</button>
+            </div>
+
+            <p class="auth-footer-text">
+              Already have an account?
+              <a href="login.html">Log in to ENCAP</a>
+            </p>
+          </form>
+        </div>
+      </main>
+
+      <footer class="site-footer">
+        <div class="footer-inner">
+          <div>
+            <div class="footer-title">Explainable News Credibility</div>
+            <p class="footer-brand">
+              ENCAP (Explainable News Credibility Analysis Platform) helps researchers, analysts, and
+              newsrooms evaluate the credibility of news articles using transparent, multi-layered
+              analysis rather than opaque labels.
+            </p>
+          </div>
+          <div>
+            <div class="footer-title">Quick Navigation</div>
+            <div class="footer-links">
+              <a href="index.html">Home</a>
+              <a href="analyze.html">Analyze News</a>
+              <a href="dashboard.html">Dashboard</a>
+              <a href="history.html">Analysis History</a>
+            </div>
+          </div>
+          <div>
+            <div class="footer-title">Misinformation Awareness</div>
+            <p class="footer-brand">
+              No automated system is perfect. ENCAP is designed to assist—not replace—human judgment.
+              Always interpret results alongside domain expertise and additional context.
+            </p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span class="footer-badge">ENCAP – Explainable News Credibility Analysis Platform</span>
+          <span>© <span id="footerYear"></span> ENCAP. All rights reserved.</span>
+        </div>
+      </footer>
+    </div>
+
+    <script src="script2.js"></script>
+  </body>
+</html>
+

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ENCAP</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style3.css">
+  </head>
+  <body>
+        <div id="cursor"></div>
+<div id="cursor-ring"></div>
+    <nav id="mainNav">
+        <div class="nav-bar">
+        <div class="logo">
+          <a href="index.html" style="text-decoration: none;">
+          <div class="logo-box">E</div>
+          </a>
+          <a href="index.html" style="text-decoration: none;">
+           <div class="logo-name">ENCAP</div>
+           </a>
+        </div>
+ <ul class="nav-links">
+        <a href="analyze.html">ANALYZE</a>
+        <a href="dashboard.html">DASHBOARD</a>
+        <a href="history.html">HISTORY</a>
+        <a href="login.html">LOGIN</a>
+        </ul>
+            
+             <a href="register.html"><button class="nav-actionButton">Get Started</button></a>
+        </div>
+    </nav>
+
+      <main class="main-content">
+        <section class="section" id="resultsContainer">
+          <div class="section-inner">
+            <div class="section-header-result">
+              <div class="section-label">Credibility Report</div>
+              <h1 class="section-title">Explainable analysis for this article</h1>
+              <p class="section-subtitle">
+                This page summarizes ENCAP’s assessment of the submitted article. A numerical
+                credibility score is combined with a qualitative risk level and module‑level
+                explanations detailing <strong>why</strong> specific concerns were raised.
+              </p>
+            </div>
+
+            <header class="results-header">
+              <div>
+                <div class="pill">
+                  <span class="pill-dot"></span>
+                  Current article
+                </div>
+                <p class="mt-sm">
+                  <strong id="resultsHeadlineSlot">Submitted article</strong>
+                </p>
+              </div>
+              <div class="results-meta">
+                <p>
+                  The score and risk level shown here are simulated placeholders, designed to
+                  illustrate how a real backend integration would surface model outputs. When wired
+                  to APIs, ENCAP can display live scores and rationales from your models.
+                </p>
+              </div>
+            </header>
+
+            <section class="results-main">
+              <article class="results-score-card">
+                <div class="results-score-label">Credibility score</div>
+                <div class="results-score-value" id="resultsScoreValue">72</div>
+                <div class="results-score-bar">
+                  <div
+                    class="results-score-bar-fill"
+                    id="resultsScoreBarFill"
+                    style="width: 0"
+                  ></div>
+                </div>
+                <p class="results-score-meta">
+                  Higher scores indicate content that appears more credible based on ENCAP’s current
+                  configuration. Lower scores suggest elevated risk and warrant closer human review.
+                </p>
+                <div class="mt-sm">
+                  <span class="results-risk" id="resultsRiskBadge">Moderate Risk</span>
+                </div>
+              </article>
+
+              <aside class="results-meta">
+                <h2 class="section-title" style="font-size: 1.15rem; margin-bottom: 0.4rem">
+                  How to read this report
+                </h2>
+                <p>
+                  ENCAP does not make final determinations about truthfulness. Instead, it highlights
+                  signals that <em>may</em> correlate with misinformation. Combine these indicators
+                  with your own domain knowledge, additional sources, and editorial judgment.
+                </p>
+                <ul class="education-list" style="margin-top: 0.8rem">
+                  <li>Use the score as a prioritization signal, not a verdict.</li>
+                  <li>Review each module section to understand which factors drove the score.</li>
+                  <li>Document decisions for accountability and future audits.</li>
+                </ul>
+              </aside>
+            </section>
+
+            <section class="mt-md">
+              <div class="results-grid">
+                <article class="results-card">
+                  <header class="results-card-header">
+                    <div>
+                      <h3 class="results-card-title">Source Credibility Analysis</h3>
+                      <p class="text-muted" style="font-size: 0.84rem">
+                        Evaluates the outlet’s prior behavior and trust signals.
+                      </p>
+                    </div>
+                    <span class="results-card-label">Source module</span>
+                  </header>
+                  <div class="results-card-body" id="sourceDetail">
+                    Source details will appear here once the analysis is loaded.
+                  </div>
+                  <div class="results-tag-row">
+                    <span class="results-tag">Trusted / mixed / unverified labels</span>
+                    <span class="results-tag">Domain reputation history</span>
+                  </div>
+                </article>
+
+                <article class="results-card">
+                  <header class="results-card-header">
+                    <div>
+                      <h3 class="results-card-title">Sensational Language Detection</h3>
+                      <p class="text-muted" style="font-size: 0.84rem">
+                        Highlights emotional, exaggerated, or manipulative phrasing.
+                      </p>
+                    </div>
+                    <span class="results-card-label">Language module</span>
+                  </header>
+                  <div class="results-card-body" id="languageDetail">
+                    Language indicators will appear here once the analysis is loaded.
+                  </div>
+                  <ul class="results-list">
+                    <li>Counts and examples of suspicious keywords or phrases.</li>
+                    <li>Patterns such as all‑caps emphasis and fear‑based framing.</li>
+                  </ul>
+                </article>
+
+                <article class="results-card">
+                  <header class="results-card-header">
+                    <div>
+                      <h3 class="results-card-title">Headline Structure Analysis</h3>
+                      <p class="text-muted" style="font-size: 0.84rem">
+                        Assesses whether the headline uses clickbait‑style framing.
+                      </p>
+                    </div>
+                    <span class="results-card-label">Headline module</span>
+                  </header>
+                  <div class="results-card-body" id="headlineDetail">
+                    Headline structure findings will appear here once the analysis is loaded.
+                  </div>
+                  <ul class="results-list">
+                    <li>Use of vague references, exaggeration, or curiosity gaps.</li>
+                    <li>Excessive punctuation or capitalization patterns.</li>
+                  </ul>
+                </article>
+
+                <article class="results-card">
+                  <header class="results-card-header">
+                    <div>
+                      <h3 class="results-card-title">Claim Repetition Analysis</h3>
+                      <p class="text-muted" style="font-size: 0.84rem">
+                        Checks whether similar claims were previously flagged in the system.
+                      </p>
+                    </div>
+                    <span class="results-card-label">Claims module</span>
+                  </header>
+                  <div class="results-card-body" id="claimsDetail">
+                    Claim repetition insights will appear here once the analysis is loaded.
+                  </div>
+                  <ul class="results-list">
+                    <li>Overlap with known misinformation narratives.</li>
+                    <li>Frequency and context of repeated claims.</li>
+                  </ul>
+                </article>
+              </div>
+            </section>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="footer-inner">
+          <div>
+            <div class="footer-title">Explainable News Credibility</div>
+            <p class="footer-brand">
+              ENCAP (Explainable News Credibility Analysis Platform) helps researchers, analysts, and
+              newsrooms evaluate the credibility of news articles using transparent, multi-layered
+              analysis rather than opaque labels.
+            </p>
+          </div>
+          <div>
+            <div class="footer-title">Quick Navigation</div>
+            <div class="footer-links">
+              <a href="index.html">Home</a>
+              <a href="analyze.html">Analyze News</a>
+              <a href="dashboard.html">Dashboard</a>
+              <a href="history.html">Analysis History</a>
+            </div>
+          </div>
+          <div>
+            <div class="footer-title">Misinformation Awareness</div>
+            <p class="footer-brand">
+              No automated system is perfect. ENCAP is designed to assist—not replace—human judgment.
+              Always interpret results alongside domain expertise and additional context.
+            </p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span class="footer-badge">ENCAP – Explainable News Credibility Analysis Platform</span>
+          <span>© <span id="footerYear"></span> ENCAP. All rights reserved.</span>
+        </div>
+      </footer>
+    </div>
+
+    <script src="script2.js"></script>
+  </body>
+</html>
+

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ENCAP</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style3.css">
+  </head>
+  <body>
+
+       <div id="cursor"></div>
+<div id="cursor-ring"></div>
+    <nav id="mainNav">
+        <div class="nav-bar">
+        <div class="logo">
+          <a href="index.html" style="text-decoration: none;">
+          <div class="logo-box">E</div>
+          </a>
+          <a href="index.html" style="text-decoration: none;">
+           <div class="logo-name">ENCAP</div>
+           </a>
+        </div>
+ <ul class="nav-links">
+        <a href="analyze.html">ANALYZE</a>
+        <a href="dashboard.html">DASHBOARD</a>
+        <a href="history.html">HISTORY</a>
+        <a href="login.html">LOGIN</a>
+        </ul>
+            
+             <a href="register.html"><button class="nav-actionButton">Get Started</button></a>
+        </div>
+    </nav>
+    <div class="section-header">
+              <div class="section-label">Analyze News</div>
+              <h1 class="section-title">Submit an article for credibility analysis</h1>
+              <p class="section-subtitle">
+                ENCAP evaluates news content using multiple credibility modules. Provide a headline,
+                full article text, or upload a PDF document. The system focuses on <strong>textual
+                content</strong> only—images and screenshots are not analyzed.
+              </p>
+            </div>
+      <main class="main-content">
+        <section class="section">
+          <div class="section-inner">
+            
+
+            <div class="form-grid">
+              <form id="analyzeForm" class="form-card" novalidate>
+                <div class="form-group">
+                  <label for="headlineInput" class="form-label">
+                    <span>Headline</span>
+                    <span class="helper">Optional, but recommended</span>
+                  </label>
+                  <input
+                    id="headlineInput"
+                    name="headline"
+                    class="input"
+                    type="text"
+                    placeholder="Enter the news headline"
+                    autocomplete="off"
+                  />
+                  <p class="form-hint">
+                    Used for headline structure and clickbait pattern analysis.
+                  </p>
+                </div>
+
+                <div class="form-group">
+                  <label for="sourceInput" class="form-label">
+                    <span>Source website or domain</span>
+                    <span class="helper">Optional</span>
+                  </label>
+                  <input
+                    id="sourceInput"
+                    name="source"
+                    class="input"
+                    type="text"
+                    placeholder="e.g., example-news.org or https://example-news.org"
+                    autocomplete="off"
+                  />
+                  <p class="form-hint">
+                    ENCAP uses this to check whether the source is trusted, mixed, or unverified.
+                  </p>
+                </div>
+
+                <div class="form-group">
+                  <label for="contentInput" class="form-label">
+                    <span>Article content</span>
+                    <span class="helper">Paste full text where possible</span>
+                  </label>
+                  <textarea
+                    id="contentInput"
+                    name="content"
+                    class="textarea"
+                    placeholder="Paste the full article text here..."
+                  ></textarea>
+                  <p class="form-hint">
+                    Used by language, claim, and context modules. You may leave this empty if you
+                    are uploading a PDF instead.
+                  </p>
+                </div>
+
+                <div class="form-group">
+                  <label for="pdfInput" class="form-label">
+                    <span>PDF upload</span>
+                    <span class="helper">Optional</span>
+                  </label>
+                  <input
+                    id="pdfInput"
+                    name="pdf"
+                    class="file-input"
+                    type="file"
+                    accept="application/pdf"
+                  />
+                  <p class="form-hint">
+                    Upload a PDF containing a news article. ENCAP will extract and analyze the text.
+                    Images and image-based documents are <strong>not</strong> supported.
+                  </p>
+                </div>
+
+                <div class="form-actions">
+                  <span class="badge-text">
+                    <span class="pill-dot"></span>
+                    <span>
+                      ENCAP generates a credibility score with module‑level explanations instead of a
+                      simple fake/real label.
+                    </span>
+                  </span>
+                  <button type="submit" class="btn">Analyze News</button>
+                </div>
+              </form>
+
+              <aside class="form-card">
+                <div class="section-label">What ENCAP evaluates</div>
+                <p class="section-subtitle">
+                  The analysis pipeline is built around multiple, interpretable modules. Each module
+                  contributes its own perspective to the final credibility score and report.
+                </p>
+                <ul class="education-list">
+                  <li>
+                    <strong>Source credibility</strong> – Checks whether the domain appears in trusted
+                    or repeatedly problematic outlet lists.
+                  </li>
+                  <li>
+                    <strong>Sensational language</strong> – Detects emotional, exaggerated, or
+                    manipulative phrasing.
+                  </li>
+                  <li>
+                    <strong>Headline structure</strong> – Flags clickbait or overly vague headline
+                    constructions.
+                  </li>
+                  <li>
+                    <strong>Claim repetition</strong> – Compares extracted claims to a history of
+                    previously flagged narratives.
+                  </li>
+                </ul>
+                <p class="section-subtitle mt-md">
+                  This page only handles input collection and validation. Backend APIs can connect to
+                  the `Analyze News` action to run your actual models.
+                </p>
+              </aside>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="footer-inner">
+          <div>
+            <div class="footer-title">Explainable News Credibility</div>
+            <p class="footer-brand">
+              ENCAP (Explainable News Credibility Analysis Platform) helps researchers, analysts, and
+              newsrooms evaluate the credibility of news articles using transparent, multi-layered
+              analysis rather than opaque labels.
+            </p>
+          </div>
+          <div>
+            <div class="footer-title">Quick Navigation</div>
+            <div class="footer-links">
+              <a href="index.html">Home</a>
+              <a href="analyze.html">Analyze News</a>
+              <a href="dashboard.html">Dashboard</a>
+              <a href="history.html">Analysis History</a>
+            </div>
+          </div>
+          <div>
+            <div class="footer-title">Misinformation Awareness</div>
+            <p class="footer-brand">
+              No automated system is perfect. ENCAP is designed to assist—not replace—human judgment.
+              Always interpret results alongside domain expertise and additional context.
+            </p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span class="footer-badge">ENCAP – Explainable News Credibility Analysis Platform</span>
+          <span>© <span id="footerYear"></span> ENCAP. All rights reserved.</span>
+        </div>
+      </footer>
+
+
+    <script src="script2.js"></script>
+  </body>
+</html>
+

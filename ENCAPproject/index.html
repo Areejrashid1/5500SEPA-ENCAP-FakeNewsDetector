@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ENCAP</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style3.css">
+</head>
+<body>
+  <!-- Cursor ring -->
+   <div id="cursor"></div>
+<div id="cursor-ring"></div>
+
+    <!-- Nav Bar -->
+    <nav id="mainNav">
+        <div class="nav-bar">
+        <div class="logo">
+           <div class="logo-box">E</div>
+           <div class="logo-name">ENCAP</div>
+        </div>
+ <ul class="nav-links">
+        <a href="analyze.html">ANALYZE</a>
+        <a href="dashboard.html">DASHBOARD</a>
+        <a href="history.html">HISTORY</a>
+        <a href="login.html">LOGIN</a>
+        </ul>
+            
+            <a href="register.html"><button class="nav-actionButton">Get Started</button></a>
+        </div>
+    </nav>
+    <!-- -------------------------------------------------------------------------------- -->
+    <!-- main hero section -->
+     <section class="hero">
+       <div class="hero-grid"></div>
+  <div class="hero-orb"></div>
+
+  <div class="hero-eyebrow">
+    <span>Fake News Detection Platform</span>
+  </div>
+  <h1 class="hero-title">
+    Truth has<br/><em>layers.</em><br/>We find them.
+  </h1>
+  <p class="hero-sub">
+    ENCAP analyzes news articles through 6 detection layers;
+    including source credibility evaluation, sensational language detection, headline pattern analysis, 
+    and claim repetition checks; delivering a transparent and explainable credibility 
+    report that helps users understand whether a news story may be misleading or trustworthy.
+  </p>
+
+  <div class="hero-actions">
+    <button class="btn-primary" onclick="location.href='analyze.html'">Analyze an Article</button>
+    <a href="#how-it-works" class="btn-ghost">See How It Works</a>
+  </div>
+
+  <div class="hero-scroll-hint">
+    <div class="scroll-line"></div>
+    <span>Scroll to explore</span>
+  </div>
+
+  <div class="hero-stats">
+    <div class="stat-item">
+      <div class="stat-num">6</div>
+      <div class="stat-label">Detection Layers</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">98%</div>
+      <div class="stat-label">Accuracy Rate</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">&lt;2s</div>
+      <div class="stat-label">Analysis Time</div>
+    </div>
+  </div>
+</section>
+<!-- Marquee -->
+<div class="ticker-wrap">
+  <div class="ticker" id="ticker">
+<span class="ticker-item"><span class="ticker-dot"></span>Source Credibility Evaluation</span>
+<span class="ticker-item"><span class="ticker-dot"></span>Sensational Language Detection</span>
+<span class="ticker-item"><span class="ticker-dot"></span>Headline Pattern Analysis</span>
+<span class="ticker-item"><span class="ticker-dot"></span>Clickbait Phrase Detection</span>
+<span class="ticker-item"><span class="ticker-dot"></span>Claim Repetition Analysis</span>
+<span class="ticker-item"><span class="ticker-dot"></span>Credibility Score Generation</span>
+<span class="ticker-item"><span class="ticker-dot"></span>Source Credibility Evaluation</span>
+<span class="ticker-item"><span class="ticker-dot"></span>Sensational Language Detection</span>
+<span class="ticker-item"><span class="ticker-dot"></span>Headline Pattern Analysis</span>
+<span class="ticker-item"><span class="ticker-dot"></span>Clickbait Phrase Detection</span>
+<span class="ticker-item"><span class="ticker-dot"></span>Claim Repetition Analysis</span>
+<span class="ticker-item"><span class="ticker-dot"></span>Credibility Score Generation</span>
+  </div>
+</div>
+
+<!-- SCROLLYTELLING -->
+<section class="scroll-section" id="scrollStory">
+  <div class="scroll-sticky">
+
+    <!-- Canvas for animated layers -->
+    <div class="detection-canvas">
+      <canvas id="mainCanvas"></canvas>
+    </div>
+
+    <!-- Text overlays -->
+    <div class="scroll-overlay">
+
+      <!-- Beat 1: 0% -->
+      <div class="scroll-text st-1" id="st1">
+        <div class="scroll-text-eyebrow"><span></span>Powered by ENCAP<span></span></div>
+        <h2>Six layers.<br/><em>One verdict.</em></h2>
+        <p>Scroll to watch our detection engine<br/>dissect a news article in real time.</p>
+      </div>
+
+      <!-- Beat 2: 20% -->
+      <div class="scroll-text st-2" id="st2">
+        <div class="scroll-text-eyebrow"><span></span>Layer 01</div>
+        <h2>Source<br/><em>Credibility</em></h2>
+        <p>We cross-reference publishers against<br/>300+ verified trust databases worldwide.</p>
+      </div>
+
+      <!-- Beat 3: 40% -->
+      <div class="scroll-text st-3" id="st3">
+        <div class="scroll-text-eyebrow">Layer 02<span></span></div>
+        <h2>Linguistic<br/><em>Patterns</em></h2>
+        <p>Sensationalism, emotional manipulation,<br/>and clickbait signals are flagged instantly.</p>
+      </div>
+
+      <!-- Beat 4: 60% -->
+      <div class="scroll-text st-2" id="st4" style="top:auto; bottom: 15%;">
+        <div class="scroll-text-eyebrow"><span></span>Layer 03–06</div>
+        <h2>Deep<br/><em>Analysis</em></h2>
+        <p>Claims, sentiment, propagation networks,<br/>and headline integrity — all in one pass.</p>
+      </div>
+
+      <!-- Beat 5: 85% -->
+      <div class="scroll-text st-5" id="st5">
+        <div class="scroll-text-eyebrow"><span></span>Verdict Rendered<span></span></div>
+        <h2>Transparent.<br/><em>Explainable.</em></h2>
+        <p>Every score is backed by evidence.<br/>No black boxes. No opaque labels.</p>
+      </div>
+
+    </div>
+
+    <!-- Progress indicator -->
+    <div class="scroll-progress-bar">
+      <div class="spb-label">Progress</div>
+      <div class="spb-track"><div class="spb-fill" id="spbFill"></div></div>
+    </div>
+
+  </div>
+</section>
+<!-- Features Section -->
+ <section class="features-section reveal" id="how-it-works">
+  <div class="section-header">
+    <div>
+      <div class="section-eyebrow">Detection Modules</div>
+      <h2 class="section-title">Every layer,<br/><em>explained.</em></h2>
+    </div>
+    <span class="section-count">06 modules</span>
+  </div>
+
+  <div class="features-grid">
+    <div class="feature-card reveal">
+      <div class="feature-num">01</div>
+      <div class="feature-icon">🔍</div>
+      <div class="feature-title">Source Credibility</div>
+      <p class="feature-desc">Publisher domains are checked against a curated list of trusted and suspicious sources. Unknown or flagged domains contribute to higher fake news scores.</p>
+      <span class="feature-tag">Domain Verification</span>
+    </div>
+    <div class="feature-card reveal">
+      <div class="feature-num">02</div>
+      <div class="feature-icon">🧠</div>
+      <div class="feature-title">Linguistic Analysis</div>
+      <p class="feature-desc">Rule-based pattern matching detects clickbait keywords, emotional language, and exaggerated phrases derived from real fake news datasets.</p>
+      <span class="feature-tag">Rule Engine</span>
+    </div>
+    <div class="feature-card reveal">
+      <div class="feature-num">03</div>
+      <div class="feature-icon">📋</div>
+      <div class="feature-title">Claim Verification</div>
+      <p class="feature-desc">Content is evaluated by checking consistency between headline and article text, identifying misleading claims or unsupported statements.</p>
+      <span class="feature-tag">Content Validation</span>
+    </div>
+    <div class="feature-card reveal">
+      <div class="feature-num">04</div>
+      <div class="feature-icon">📊</div>
+      <div class="feature-title">Sentiment Scoring</div>
+      <p class="feature-desc">Detection of excessive punctuation, capitalization, and emotionally charged wording helps identify biased or sensational reporting patterns.</p>
+      <span class="feature-tag">Pattern Scoring</span>
+    </div>
+    <div class="feature-card reveal">
+      <div class="feature-num">05</div>
+      <div class="feature-icon">🔗</div>
+      <div class="feature-title">Headline Integrity</div>
+      <p class="feature-desc">The system compares headline keywords with article content to detect clickbait, misleading framing, or lack of supporting information.</p>
+      <span class="feature-tag">Consistency Check</span>
+    </div>
+    <div class="feature-card reveal">
+      <div class="feature-num">06</div>
+      <div class="feature-icon">🌐</div>
+      <div class="feature-title">Propagation Trace</div>
+      <p class="feature-desc">Source patterns and domain structures are analyzed to identify suspicious or newly created websites often associated with misinformation.</p>
+      <span class="feature-tag">Source Analysis</span>
+    </div>
+  </div>
+</section>
+
+<!-- Process -->
+<section class="process-section" id="process">
+  <div class="section-header reveal">
+    <div>
+      <div class="section-eyebrow">How It Works</div>
+      <h2 class="section-title">Four steps to<br/><em>clarity.</em></h2>
+    </div>
+    <span class="section-count">04 steps</span>
+  </div>
+
+  <div class="process-steps">
+    <div class="process-step">
+      <div class="step-dot">01</div>
+      <div class="step-title">Submit</div>
+      <p class="step-desc">Paste a URL, headline, article text, or upload a PDF document for analysis.</p>
+    </div>
+    <div class="process-step">
+      <div class="step-dot">02</div>
+      <div class="step-title">Parse</div>
+      <p class="step-desc">ENCAP preprocesses and normalises content, extracting structured signals for each module.</p>
+    </div>
+    <div class="process-step">
+      <div class="step-dot">03</div>
+      <div class="step-title">Analyse</div>
+      <p class="step-desc">All six detection layers run in parallel, each contributing weighted signals to the final score.</p>
+    </div>
+    <div class="process-step">
+      <div class="step-dot">04</div>
+      <div class="step-title">Report</div>
+      <p class="step-desc">A transparent, explainable credibility report is generated — no black boxes, just evidence.</p>
+    </div>
+  </div>
+</section>
+
+<section class="demo-section reveal">
+  <div class="demo-left">
+    <div class="section-eyebrow">Live Score Preview</div>
+    <h2>See what a<br/><em>verdict</em> looks like.</h2>
+    <p>Every analysis produces a layered credibility report with individual module scores, evidence snippets, and an overall risk assessment. No single number — a full breakdown.</p>
+    <button class="btn-primary" onclick="location.href='analyze.html'">Try It Now</button>
+  </div>
+  <div class="score-display reveal" id="scoreDemo">
+    <div class="score-ring-wrap">
+      <div class="score-ring">
+        <svg viewBox="0 0 100 100">
+          <circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,0.07)" stroke-width="6"/>
+          <circle id="scoreCircle" cx="50" cy="50" r="40" fill="none" stroke="#c8ff00" stroke-width="6"
+            stroke-dasharray="251.2" stroke-dashoffset="251.2" stroke-linecap="round"
+            style="transition: stroke-dashoffset 1.8s cubic-bezier(0.16,1,0.3,1)"/>
+        </svg>
+        <div class="score-ring-num" id="scoreNum">0</div>
+      </div>
+      <div class="score-meta">
+        <div class="score-verdict low" id="scoreVerdict">Low Risk</div>
+        <div class="score-sub">Credibility Score · Sample Article</div>
+      </div>
+    </div>
+    <div class="score-layers">
+      <div class="score-layer">
+        <span class="sl-label">Source</span>
+        <div class="sl-bar"><div class="sl-fill" style="background: var(--accent);" data-val="88"></div></div>
+        <span class="sl-val">88</span>
+      </div>
+      <div class="score-layer">
+        <span class="sl-label">Language</span>
+        <div class="sl-bar"><div class="sl-fill" style="background: var(--accent);" data-val="76"></div></div>
+        <span class="sl-val">76</span>
+      </div>
+      <div class="score-layer">
+        <span class="sl-label">Claims</span>
+        <div class="sl-bar"><div class="sl-fill" style="background: #ffaa00;" data-val="62"></div></div>
+        <span class="sl-val">62</span>
+      </div>
+      <div class="score-layer">
+        <span class="sl-label">Sentiment</span>
+        <div class="sl-bar"><div class="sl-fill" style="background: var(--accent);" data-val="81"></div></div>
+        <span class="sl-val">81</span>
+      </div>
+      <div class="score-layer">
+        <span class="sl-label">Headline</span>
+        <div class="sl-bar"><div class="sl-fill" style="background: var(--accent);" data-val="90"></div></div>
+        <span class="sl-val">90</span>
+      </div>
+      <div class="score-layer">
+        <span class="sl-label">Propagation</span>
+        <div class="sl-bar"><div class="sl-fill" style="background: var(--accent3);" data-val="71"></div></div>
+        <span class="sl-val">71</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section reveal">
+  <div class="cta-eyebrow">Ready to start?</div>
+  <h2 class="cta-title">Don't trust.<br/><em>Verify.</em></h2>
+  <p class="cta-sub">Submit any article, URL, or PDF and receive a full explainable credibility report in under two seconds.</p>
+  <div class="cta-actions">
+    <button class="btn-primary" onclick="location.href='analyze.html'">Analyze Now — It's Free</button>
+    <a href="register.html" class="btn-ghost">Create an Account</a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="site-footer">
+        <div class="footer-inner">
+          <div>
+            <div class="footer-title">Explainable News Credibility</div>
+            <p class="footer-brand">
+              ENCAP (Explainable News Credibility Analysis Platform) helps researchers, analysts, and
+              newsrooms evaluate the credibility of news articles using transparent, multi-layered
+              analysis rather than opaque labels.
+            </p>
+          </div>
+          <div class="titlesfooter">
+            <div class="footer-title">Quick Navigation</div>
+            <div class="footer-links">
+              <a href="index.html">Home</a>
+              <a href="/pages/analyze.html">Analyze News</a>
+              <a href="pages/dashboard.html">Dashboard</a>
+              <a href="history.html">Analysis History</a>
+            </div>
+          </div>
+          <div>
+            <div class="footer-title">Misinformation Awareness</div>
+            <p class="footer-brand">
+              No automated system is perfect. ENCAP is designed to assist—not replace—human judgment.
+              Always interpret results alongside domain expertise and additional context.
+            </p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span class="footer-badge">ENCAP – Explainable News Credibility Analysis Platform</span>
+          <span>© <span id="footerYear"></span> ENCAP. All rights reserved.</span>
+        </div>
+      </footer>
+</body>
+<script src="script2.js"></script>
+</html>
