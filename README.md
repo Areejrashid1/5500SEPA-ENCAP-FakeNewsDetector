@@ -1,146 +1,183 @@
-ENCAP – Explainable News Credibility Analysis Platform
-📌 Overview
+**ENCAP - Explainable News Credibility Analysis Platform**
 
-ENCAP (Explainable News Credibility Analysis Platform) is a web-based system designed to detect and analyze potentially fake or misleading news articles using a rule-based, data-guided approach.
+**OVERVIEW**
+ENCAP is a web-based system designed to detect and analyze potentially fake or misleading news articles using a rule-based, data-guided approach.
+Unlike traditional systems that rely on AI or machine learning, ENCAP focuses on transparency, lightweight performance, and explainable results.
 
-Unlike traditional systems that rely on machine learning or AI, ENCAP focuses on:
+**OBJECTIVES**
+1.  Detect fake or misleading news articles
+2.  Provide clear reasoning behind results
+3.  Offer a lightweight alternative to AI-based systems
+4.  Enable quick and easy news analysis
+5.  Maintain transparency in detection
 
-Transparency
-Lightweight performance
-Explainable results
-
-The system evaluates news credibility based on predefined rules derived from real-world fake news datasets.
-
-🎯 Objectives
-Detect fake or misleading news articles
-Provide clear reasoning behind results
-Offer a lightweight alternative to AI-based systems
-Enable users to analyze news quickly and easily
-Maintain user-friendly and transparent analysis
-⚙️ Features
-🔍 Source Credibility
-Verifies news sources against trusted and suspicious domain lists
-🧠 Linguistic Analysis
+**FEATURES**
+**Source Credibility**
+Verifies news sources using trusted and suspicious domain lists
+**Linguistic Analysis**
 Detects clickbait words and suspicious phrases derived from datasets
-📋 Claim Verification
+**Claim Verification**
 Checks consistency between headline and article content
-📊 Sentiment Scoring
+**Sentiment Scoring**
 Identifies excessive punctuation, capitalization, and emotional tone
-🔗 Headline Integrity
+**Headline Integrity**
 Detects misleading or exaggerated headlines
-🌐 Source Pattern Analysis
+**Source Pattern Analysis**
 Flags suspicious domain structures and unknown sources
-🧠 Detection Methodology
 
-ENCAP uses a rule-based scoring system instead of AI.
-
-Detection Factors:
-Clickbait keywords
+**DETECTION METHODOLOGY**
+ENCAP uses a rule-based scoring system.
+Detection factors include:
+**Clickbait keywords
 Excessive punctuation (!!!, ???)
 ALL CAPS headlines
-Suspicious words/phrases
+Suspicious words and phrases
 Untrusted sources
 Domain patterns
-Headline-content mismatch
-📊 Scoring System
-Score Range	Classification
-0 – 2	Likely Real
-3 – 5	Suspicious
-6+	Likely Fake
-📌 Example Output
-Fake Score: 7
-Status: Likely Fake
+Headline-content mismatch**
 
-Reasons:
-- Clickbait word detected: "shocking"
-- Excessive punctuation
-- Source not trusted
-- Headline mismatch detected
-🏗️ System Architecture
-User
+**SCORING SYSTEM**
+  0 – 2 → Likely Real
+  3 – 5 → Suspicious
+  6+ → Likely Fake
+
+**EXAMPLE OUTPUT**
+  Fake Score: 7
+  Status: Likely Fake
+
+**Reasons**:
+  Clickbait word detected: "shocking"
+  Excessive punctuation
+  Source not trusted
+  Headline mismatch detected
+
+**SYSTEM ARCHITECTURE**
+  User
   ↓
-Frontend (HTML, CSS, JavaScript)
+  Frontend (HTML, CSS, JavaScript)
   ↓
-API Request
+  API Request
   ↓
-Java Backend (Spring Boot)
+  Java Backend (Spring Boot)
   ↓
-Rule-Based Detection Engine
+  Rule-Based Detection Engine
   ↓
-Pattern Files (keywords, sources)
+  Pattern Files (keywords, sources)
   ↓
-Score Calculation
+  Score Calculation
   ↓
-Result Display
-🧩 Tech Stack
-Frontend
+  Result Display
+
+**TECH STACK**
+**Frontend:**
 HTML
 CSS
 JavaScript
-Backend
+
+**Backend:**
 Java (Spring Boot)
-Data Handling
-CSV / Text files (for dataset-derived rules)
-📂 Project Structure
-ENCAP
+
+**Data Handling:**
+CSV / Text files
+
+**PROJECT STRUCTURE**
+ENCAPproject/
 │
-├── frontend
-│   ├── index.html
-│   ├── style.css
-│   └── script.js
+├── backend/
+│   ├── config/
+│   │   └── database.php              # PDO database connection (singleton)
+│   │
+│   ├── controllers/
+│   │   ├── AuthController.php        # Register & login logic
+│   │   ├── NewsController.php        # Article analysis entry point
+│   │   ├── ReportController.php      # Report fetch & history
+│   │   └── AdminController.php       # Keyword management
+│   │
+│   ├── models/
+│   │   ├── User.php
+│   │   ├── Article.php
+│   │   ├── Claim.php
+│   │   └── Report.php
+│   │
+│   ├── repositories/
+│   │   ├── UserRepository.php        # User DB operations
+│   │   ├── ArticleRepository.php     # Article DB operations
+│   │   ├── ClaimRepository.php       # Claim DB operations
+│   │   ├── KeywordRepository.php     # Keyword DB operations
+│   │   └── SourceRepository.php      # Source DB operations
+│   │
+│   ├── services/
+│   │   ├── NewsAnalyzerService.php       # Orchestrates all modules
+│   │   ├── SourceCredibilityService.php  # Module 1
+│   │   ├── SensationalLanguageService.php# Module 2
+│   │   ├── HeadlineAnalysisService.php   # Module 3
+│   │   ├── ClaimRepetitionService.php    # Module 4
+│   │   ├── CredibilityScoringService.php # Score computation
+│   │   └── ReportGeneratorService.php    # Report assembly
+│   │
+│   ├── utils/
+│   │   ├── PDFTextExtractor.php      # Java-based PDF extraction
+│   │   └── TextProcessor.php         # Tokenization & claim extraction
+│   │
+│   ├── routes/
+│   │   └── api.php                   # All API route definitions
+│   │
+│   ├── uploads/
+│   │   └── pdf_files/                # Uploaded PDFs stored here
+│   │
+│   ├── pdf-extractor.jar             # Custom Java PDF extractor
+│   ├── pdfbox-app-3.0.7.jar          # Apache PDFBox library
+│   └── index.php                     # Backend entry point (session_start)
 │
-├── backend
-│   ├── controller
-│   ├── service
-│   ├── model
-│   └── main application
-│
-├── data
-│   ├── suspicious_words.txt
-│   ├── trusted_sources.txt
-│   └── suspicious_sources.txt
-🔄 Workflow
-User enters:
-Headline
-Article content
-Source URL
-Frontend sends data to backend
-Backend processes:
-Keyword detection
-Source verification
-Pattern analysis
-Score is calculated
-Result + explanation is returned
-Displayed to user
-📊 Dataset Usage
+├── index.html                        # Landing page
+├── index2.html                       # Scrollytelling landing page
+├── analyze.html                      # Article submission form
+├── result.html                       # Credibility report display
+├── history.html                      # User analysis history
+├── dashboard.html                    # User dashboard
+├── login.html                        # Login page
+├── register.html                     # Registration page
+├── style.css                         # Shared styles (index, login, register)
+├── style3.css                        # Shared styles (analyze, history, result)
+├── script.js                         # Auth forms JS (login/register pages)
+├── script2.js                        # Main app JS (analyze, result, history)
+└── encap.js                          # Scrollytelling canvas engine
 
-Public fake news datasets are used to:
 
-Extract common fake news keywords
-Identify suspicious sources
-Improve rule accuracy
+**WORKFLOW**
+  User inputs headline, content, and source URL
+  Frontend sends request to backend
+  Backend analyzes using rules
+  Score is calculated
+  Result and explanation returned
+  Displayed to user
 
-This makes the system:
+**DATASET USAGE**
+  Datasets are used to extract:
+  Suspicious keywords
+  Source credibility patterns
+  This makes the system rule-based but data-guided.
 
-Rule-Based + Data-Guided
+**ADVANTAGES**
+  Lightweight and fast
+  No training required
+  Transparent results
+  Easy to deploy
 
-✅ Advantages
-Lightweight and fast
-No training required
-Transparent decision-making
-Easy to deploy
-Explainable results
-⚠️ Limitations
-Cannot understand deep context
-Requires manual rule updates
-Less accurate than AI models in complex cases
-🚀 Future Improvements
-Integration with machine learning models
-Real-time news scraping
-Browser extension support
-Advanced domain verification
-User history tracking
+**LIMITATIONS**
+  Cannot understand deep context
+  Requires manual updates
+  Less accurate than AI models
 
-📌 Conclusion
+**FUTURE IMPROVEMENTS**
+  Machine learning integration
+  Real-time news scraping
+  Browser extension
+  Advanced verification
+  User history system
 
-ENCAP demonstrates that effective fake news detection can be achieved without AI, using structured rules and real-world data patterns while maintaining transparency and efficiency.
+**Developers:**
+  Areej Rashid
+  Haseeb Rahat
+**CONCLUSION**
+ENCAP proves that fake news detection can be achieved without AI by using structured rules and real-world data patterns.
